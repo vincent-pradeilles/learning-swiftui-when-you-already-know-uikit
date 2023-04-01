@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  DiscoringSwiftUI
+
+  Created by Vincent on 30/03/2023.
+  
+*/
+
+"hello.title" = "Hello, world!\nIt's me";
