@@ -8,31 +8,31 @@
 import SwiftUI
 
 extension VerticalAlignment {
-    enum MidAccountAndName: AlignmentID {
+    enum AccountAndName: AlignmentID {
         static func defaultValue(in d: ViewDimensions) -> CGFloat {
             d[.top]
         }
     }
 
-    static let midAccountAndName = VerticalAlignment(MidAccountAndName.self)
+    static let accountAndName = VerticalAlignment(AccountAndName.self)
 }
 
 struct AdvancedLayoutView: View {
     var body: some View {
-        HStack(alignment: .midAccountAndName) {
+        HStack(alignment: .accountAndName) {
             VStack {
                 Text("@v_pradeilles")
-                    .alignmentGuide(.midAccountAndName) { d in d[.firstTextBaseline] }
+                    .alignmentGuide(.accountAndName) { d in d[.firstTextBaseline] }
                 Image("vincent")
                     .resizable()
                     .frame(width: 64, height: 64)
             }
 
             VStack {
-                Text("Nom complet:")
+                Text("Full Name:")
                 Text("Vincent Pradeilles")
                     .font(.largeTitle)
-                    .alignmentGuide(.midAccountAndName) { d in d[.firstTextBaseline] }
+                    .alignmentGuide(.accountAndName) { d in d[.firstTextBaseline] }
 
             }
         }
