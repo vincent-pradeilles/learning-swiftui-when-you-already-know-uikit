@@ -1,8 +1,8 @@
 //
 //  StatefulPreviewWrapper.swift
-//  Swift UI State Management
+//  StateManagement
 //
-//  Created by Vincent on 30/08/2021.
+//  Created by Vincent on 13/04/2023.
 //
 
 import SwiftUI

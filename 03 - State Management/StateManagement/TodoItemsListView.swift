@@ -1,31 +1,34 @@
 //
 //  ContentView.swift
-//  Swift UI State Management
+//  StateManagement
 //
-//  Created by Vincent on 30/08/2021.
+//  Created by Vincent on 13/04/2023.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct TodoItemsListView: View {
     
-    @StateObject var viewModel = ContentViewModel()
+    @StateObject var viewModel = TodoItemsListViewModel()
     
     var body: some View {
-        
         NavigationView {
             List {
-                ForEach($viewModel.items) { $item in
-                    TodoItemRow(item: $item.onNewValue {
+                ForEach($viewModel.todoItems) { $todoItem in
+                    TodoItemRow(item: $todoItem.onNewValue {
                         viewModel.reorder()
                     })
                 }
                 .onDelete(perform: viewModel.deleteItems(at:))
                 .onMove(perform: viewModel.moveItems(from:to:))
             }
-            .listStyle(.grouped)
-            .navigationBarTitle(Text("Today's tasks"))
-            .navigationBarItems(trailing: EditButton())
+            .listStyle(.insetGrouped)
+            .navigationTitle("Today's tasks")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+            }
             .onAppear {
                 viewModel.loadItems()
             }
@@ -34,8 +37,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    
     static var previews: some View {
-        ContentView()
+        TodoItemsListView()
     }
 }

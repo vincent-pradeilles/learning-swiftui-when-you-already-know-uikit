@@ -1,13 +1,13 @@
 //
 //  TodoItem.swift
-//  Swift UI State Management
+//  StateManagement
 //
-//  Created by Vincent on 30/08/2021.
+//  Created by Vincent on 13/04/2023.
 //
 
 import Foundation
 
-struct TodoItem: Codable, Equatable, Identifiable {
+struct TodoItem: Codable, Identifiable {
     let id: UUID
     var title: String
     var description: String?
