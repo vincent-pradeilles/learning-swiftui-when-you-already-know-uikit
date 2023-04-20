@@ -1,0 +1,13 @@
+[
+    {
+        "id": "f2f20e04-39c8-440e-8993-85edb0293852",
+        "title": "Buy some bread 🥖",
+        "isDone": false
+    },
+    {
+        "id": "eec48f65-4cc8-44cc-9db3-6da65dc12978",
+        "title": "Buy some milk 🥛",
+        "description": "Get lactose free milk",
+        "isDone": false
+    }
+]
